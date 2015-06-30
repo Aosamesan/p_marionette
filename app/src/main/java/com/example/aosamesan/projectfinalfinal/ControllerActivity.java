@@ -31,28 +31,10 @@ import java.nio.ByteBuffer;
  * @see SystemUiHider
  */
 public class ControllerActivity extends Activity {
-    /**
-     * Whether or not the system UI should be auto-hidden after
-     * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
-     */
-    private static final boolean AUTO_HIDE = true;
-
-    /**
-     * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
-     * user interaction before hiding the system UI.
-     */
-    private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
-
-    /**
-     * If set, will toggle the system UI visibility upon interaction. Otherwise,
-     * will show the system UI visibility upon interaction.
-     */
-    private static final boolean TOGGLE_ON_CLICK = true;
 
     /**
      * The flags to pass to {@link SystemUiHider#getInstance}.
      */
-    private static final int HIDER_FLAGS = SystemUiHider.FLAG_HIDE_NAVIGATION;
     private static final float MIN_MOVEMENT = 200.0f;
     private static String IP = "localhost";
     private static int PORT = 25252;
@@ -69,7 +51,6 @@ public class ControllerActivity extends Activity {
     /**
      * The instance of the {@link SystemUiHider} for this activity.
      */
-    private SystemUiHider mSystemUiHider;
     private float oldX, newX, oldY, newY;
     private ImageView imageView = null;
     private Button buttonExit = null;
@@ -131,8 +112,6 @@ public class ControllerActivity extends Activity {
         ((TextView) findViewById(R.id.fullscreen_content)).setText(pptName);
 
 
-        final View controlsView = findViewById(R.id.fullscreen_content_controls);
-        final View contentView = findViewById(R.id.fullscreen_content);
 
         imageView = (ImageView) findViewById(R.id.slide_image);
         buttonExit = (Button) findViewById(R.id.exit_button);
@@ -154,7 +133,7 @@ public class ControllerActivity extends Activity {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         boolean result = false;
-        SendSignalAsync sendSignalAsync = null;
+        SendSignalAsync sendSignalAsync;
         ReceiveImageAsync receiveImageAsync = null;
         Integer[] params = null;
 
