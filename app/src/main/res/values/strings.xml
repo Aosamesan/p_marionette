@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">P.Marionette</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_list">ListActivity</string>
+
+    <string name="title_activity_controller">ControllerActivity</string>
+    <string name="ppt_name">PPT Name</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="help_text">1. 리스트 화면에서 PPT의 파일이름을 선택하면 해당 PPT가 열립니다.\n2. 위로 Swipe하면 슬라이드쇼가 시작됩니다.\n3. 아래로 Swipe하면 진행중인 슬라이드쇼가 꺼집니다.
+    \n4. 왼쪽으로 Swipe하면 다음 슬라이드로 넘어가며, 오른쪽으로 Swipe하면 이전 슬라이드로 돌아갑니다.\n5. Disconnect버튼을 누르면 연결이 종료됩니다.\n6. 만약 슬라이드 이미지가 제대로 전송되지 않았다면, Refresh버튼으로 다시 불러올 수 있습니다.</string>
+</resources>
