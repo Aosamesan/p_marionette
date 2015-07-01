@@ -10,7 +10,6 @@ import java.util.zip.GZIPInputStream;
  * Created by Aosamesan on 2015-06-16.
  */
 public class PMarionette {
-    // Message Type
     public static final int UNDEFINED = -127;
     public static final int DISCONNECTED = -1;
     public static final int IMAGE = 0;
@@ -24,9 +23,6 @@ public class PMarionette {
     public static final int STOP = 1;
     public static final int NEXT = 2;
     public static final int PREV = 3;
-    // ?
-    public static final int FIRST = 4;
-    public static final int LAST = 5;
 
 
     public static class MessageSerializer {
@@ -45,7 +41,6 @@ public class PMarionette {
                     if (read > 0) {
                         memoryOutputStream.write(buffer, 0, read);
                     }
-                    //System.out.println("Unzip bytes : " + read);
                 }
                 memoryInputSteram.close();
                 gzipInputStream.close();
@@ -102,14 +97,6 @@ public class PMarionette {
                         result = UnZip(bytes);
                         break;
                     case LISTITEM:  // compressed
-
-//                        while(true){
-//                            read = gzipInputStream.read(buffer, 0, BUFFER_SIZE);
-//                            byteArrayOutputStream.write(buffer, 0, read);
-//                            allread += read;
-//                            if(allread >= size)
-//                                break;
-//                        }
                         byte[] stringBytes = UnZip(bytes);
 
                         String pptListItemString = new String(stringBytes, "UTF-8");
